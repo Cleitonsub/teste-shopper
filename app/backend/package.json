@@ -2,10 +2,10 @@
   "name": "back_teste_shopeer",
   "version": "1.0.0",
   "description": "Backend do teste Shopper",
-  "main": "dist/app",
+  "main": "dist/server.js",
   "scripts": {
-    "start": "(rm -rf dist && npx tsc && node dist/app.js)",
-    "dev": "(rm -rf dist && npx tsc && nodemon --watch \"./src/**\" dist/app.js)",
+    "start": "node dist/server.js",
+    "dev": "(rm -rf dist && npx tsc && nodemon dist/server.js)",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Cleiton Ribeiro",
