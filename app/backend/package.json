@@ -7,6 +7,7 @@
     "start": "node dist/server.js",
     "dev": "(rm -rf dist && npx tsc && nodemon dist/server.js)",
     "db:create": "node dist/database/populateDatabase.js",
+    "db:drop": "node dist/database/dropSchema.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Cleiton Ribeiro",
