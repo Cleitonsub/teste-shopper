@@ -1,9 +1,9 @@
 import fs from 'fs';
-import { connection } from './createConnectionDB';
+import { connection } from './createDatabase.js';
 
-export const populateDatabase = async () => {
+const populateDatabase = async () => {
   try {
-    const sql = fs.readFileSync('./path/to/file.sql', 'utf-8');
+    const sql = fs.readFileSync('./db_shopper.sql', 'utf-8');
 
     await connection.query(sql);
     console.log('Banco de dados populado com sucesso!');
@@ -12,4 +12,4 @@ export const populateDatabase = async () => {
   }
 }
 
-module.exports = populateDatabase;
+populateDatabase();
