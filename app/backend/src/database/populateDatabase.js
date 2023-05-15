@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { connection } from './createDatabase.js';
+import { connection, createDatabase } from './createDatabase.js';
 
 const populateDatabase = async () => {
   try {
@@ -8,8 +8,10 @@ const populateDatabase = async () => {
     await connection.query(sql);
     console.log('Banco de dados populado com sucesso!');
   } catch (err) {
-    console.error(err);
+    console.error(err.sqlMessage);
   }
 }
+
+createDatabase();
 
 populateDatabase();

@@ -12,6 +12,8 @@ const dropSchema = async () => {
     console.log(`Schema ${schemaName} excluído com sucesso`);
   } catch (error) {
     console.error(error);
+  } finally {
+    connection.end();
   }
 };
 
