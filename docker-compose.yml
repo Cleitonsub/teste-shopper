@@ -1,0 +1,39 @@
+version: '3.9'
+services:
+  frontend:
+    container_name: app-frontend
+    build: ./app/frontend
+    ports:
+      - 3000:3000
+    platform: linux/x86_64
+    working_dir: /app-frontend
+    depends_on:
+      - backend
+
+  backend:
+    container_name: app_backend
+    build: ./app/backend
+    ports:
+      - 3001:3001
+    platform: linux/x86_64
+    working_dir: /app-backend
+    depends_on:
+      - db_mysql
+    environment:
+      - DB_HOST=${DB_HOST}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_PORT=${DB_PORT}
+      - APP_PORT=${APP_PORT}
+      - DB_DATABASE=${DB_DATABASE}
+
+  db_mysql:
+    image: mysql:8.0.21
+    container_name: db_shopper
+    platform: linux/x86_64
+    ports:
+      - 3306:3306
+    environment:
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_DATABASE=${DB_DATABASE}
+    restart: 'always'
