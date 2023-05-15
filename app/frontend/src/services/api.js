@@ -1,6 +1,9 @@
 import axios from 'axios';
+import dotenv from 'dotenv';
 
-const api = axios.create({ baseURL: 'http://localhost:3001' });
+dotenv.config();
+
+const api = axios.create({ baseURL: `http://localhost:${process.env.APP_PORT}` });
 
 export const getAllProducts = async () => {
   const data = await api.get('/products')
