@@ -1,0 +1,31 @@
+{
+  "name": "back_teste_shopeer",
+  "version": "1.0.0",
+  "description": "Backend do teste Shopper",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "db:create": "node src/database/populateDatabase.js",
+    "db:drop": "node src/database/dropSchema.js",
+    "db:reset": "node src/database/dropSchema.js && node src/database/populateDatabase.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cleiton Ribeiro",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "eslint": "7.32.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "nodemon": "2.0.15"
+  },
+  "dependencies": {
+    "cors": "2.8.5",
+    "csv-parser": "^3.0.0",
+    "dotenv": "16.0.3",
+    "express": "4.18.2",
+    "express-async-errors": "3.1.1",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "3.3.1"
+  }
+}
